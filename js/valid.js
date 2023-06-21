@@ -4,8 +4,8 @@ var password = document.forms['form']['password'];
 var email_error = document.getElementById('email_error');
 var pass_error = document.getElementById('pass_error');
 
-email.addEventListner('textInput',email_verify);
-password.addEventListner('textInput', pass_verify);
+email.addEventListener('input',email_verify);
+password.addEventListener('input', pass_verify);
 
 function validated() {
     if (email.value.length < 9) {
@@ -20,15 +20,16 @@ function validated() {
 		password.focus();
 		return false;
 	}
+	return true;
 }
-function email_Verify(){
+function email_verify(){
 	if (email.value.length >= 8) {
 		email.style.border = "1px solid silver";
 		email_error.style.display = "none";
 		return true;
 	}
 }
-function pass_Verify(){
+function pass_verify(){
 	if (password.value.length >= 5) {
 		password.style.border = "1px solid silver";
 		pass_error.style.display = "none";
