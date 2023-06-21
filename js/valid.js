@@ -20,7 +20,8 @@ function validated() {
 		password.focus();
 		return false;
 	}
-	return true;
+	window.location.href = "./home.html";
+	return false;
 }
 function email_verify(){
 	if (email.value.length >= 8) {
